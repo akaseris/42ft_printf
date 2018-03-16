@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaseris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 14:25:07 by akaseris          #+#    #+#             */
-/*   Updated: 2018/01/26 14:27:01 by akaseris         ###   ########.fr       */
+/*   Created: 2018/03/11 16:37:49 by akaseris          #+#    #+#             */
+/*   Updated: 2018/03/11 16:37:52 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
+#include "libft.h"
+
+char		*ft_strmove(char *str, char blnk)
 {
-	return (0);
+	int i;
+	int k;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == blnk)
+		{
+			k = i;
+			while (k > 0)
+			{
+				str[k] = str[k - 1];
+				k--;
+			}
+			str[0] = blnk;
+		}
+		i++;
+	}
+	return (str);
 }

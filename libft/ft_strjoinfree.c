@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaseris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 14:27:27 by akaseris          #+#    #+#             */
-/*   Updated: 2018/01/26 14:30:32 by akaseris         ###   ########.fr       */
+/*   Created: 2018/03/15 19:49:01 by akaseris          #+#    #+#             */
+/*   Updated: 2018/03/15 19:49:03 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "libft.h"
 
-int		ft_printf(const char *str, ...)
+char	*ft_strjoinfree(char *ret, char *s1, char *s2)
 {
-	return (0);
+	char *str;
+
+	if (!s1 && !s2)
+		return (NULL);
+	str = ft_strjoin(s1, s2);
+	if (ret)
+		free(ret);
+	return (str);
 }

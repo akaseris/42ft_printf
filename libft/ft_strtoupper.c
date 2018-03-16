@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaseris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/01 13:25:41 by akaseris          #+#    #+#             */
-/*   Updated: 2017/11/25 15:42:07 by akaseris         ###   ########.fr       */
+/*   Created: 2018/03/04 19:52:24 by akaseris          #+#    #+#             */
+/*   Updated: 2018/03/04 19:53:20 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strtoupper(char *str)
 {
-	size_t count;
+	int i;
 
-	if (!s)
-		return (0);
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		str[i] = ft_toupper(str[i]);
+		i++;
+	}
+	return (str);
 }

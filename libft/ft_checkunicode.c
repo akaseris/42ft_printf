@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_checkunicode.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaseris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/01 13:25:41 by akaseris          #+#    #+#             */
-/*   Updated: 2017/11/25 15:42:07 by akaseris         ###   ########.fr       */
+/*   Created: 2018/03/15 17:12:12 by akaseris          #+#    #+#             */
+/*   Updated: 2018/03/15 17:12:14 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int		ft_checkunicode(wchar_t *str)
 {
-	size_t count;
+	int i;
 
-	if (!s)
+	if (!str)
 		return (0);
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] > 0x7F)
+			return (1);
+		i++;
+	}
+	return (0);
 }

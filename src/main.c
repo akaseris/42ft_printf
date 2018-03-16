@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaseris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/01 13:25:41 by akaseris          #+#    #+#             */
-/*   Updated: 2017/11/25 15:42:07 by akaseris         ###   ########.fr       */
+/*   Created: 2018/01/26 14:25:07 by akaseris          #+#    #+#             */
+/*   Updated: 2018/03/04 20:27:38 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include "ft_printf.h"
+#include <locale.h>
 
-size_t	ft_strlen(const char *s)
+int	main(void)
 {
-	size_t count;
-
-	if (!s)
-		return (0);
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
+	ft_printf("%-10.5lly");
+	printf("\n");
+	printf("%-10.5lly");
+	return (0);
 }

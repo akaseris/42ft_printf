@@ -6,7 +6,7 @@
 /*   By: akaseris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 19:00:43 by akaseris          #+#    #+#             */
-/*   Updated: 2017/11/25 15:32:32 by akaseris         ###   ########.fr       */
+/*   Updated: 2018/02/14 20:16:57 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,11 @@ static int	count_digits(long int nb)
 	return (alloc);
 }
 
-char		*ft_itoa(int n)
+char		*ft_itoa(long int nb)
 {
 	char		*buf;
 	int			alloc;
-	long int	nb;
 
-	nb = (long int)n;
 	alloc = count_digits(nb);
 	nb = (nb < 0) ? -nb : nb;
 	if (!(buf = (char *)malloc(sizeof(char) * alloc + 1)))

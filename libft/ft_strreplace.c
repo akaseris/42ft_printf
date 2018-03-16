@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strreplace.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaseris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/01 13:25:41 by akaseris          #+#    #+#             */
-/*   Updated: 2017/11/25 15:42:07 by akaseris         ###   ########.fr       */
+/*   Created: 2018/02/13 16:36:23 by akaseris          #+#    #+#             */
+/*   Updated: 2018/02/13 16:43:31 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strreplace(char *str, char n, char o, int len)
 {
-	size_t count;
+	int i;
 
-	if (!s)
-		return (0);
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
+	if (len <= 0)
+		return (str);
+	i = 0;
+	while (len > 0)
+	{
+		if (str[i] == o)
+			str[i] = n;
+		i++;
+		len--;
+	}
+	return (str);
 }

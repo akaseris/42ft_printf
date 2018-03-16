@@ -6,7 +6,7 @@
 /*   By: akaseris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 16:29:32 by akaseris          #+#    #+#             */
-/*   Updated: 2017/11/26 22:50:19 by akaseris         ###   ########.fr       */
+/*   Updated: 2018/03/04 20:03:46 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int				ft_strcmp(const char *s1, const char *s2);
 
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
+char			*ft_strndup(const char *s1, size_t n);
+
 int				ft_atoi(const char *str);
 
 int				ft_isalpha(int c);
@@ -111,7 +113,7 @@ char			*ft_strtrim(char const *s);
 
 char			**ft_strsplit(char const *str, char c);
 
-char			*ft_itoa(int n);
+char			*ft_itoa(long int n);
 
 void			ft_putchar(char c);
 
@@ -152,5 +154,25 @@ void			ft_advancedsortwordtab(char **tab, int (*cmp)(char *, char *));
 void			ft_swap(int *a, int *b);
 
 void			ft_printwordstables(char **tab);
+
+char			*ft_strreplace(char *str, char n, char o, int len);
+
+char			*ft_itoa_base(intmax_t val, int base);
+
+char			*ft_strtolower(char *str);
+
+char			*ft_strtoupper(char *str);
+
+char			*ft_utoa_base(uintmax_t val, int base);
+
+char			*ft_convertunicode(wchar_t c);
+
+char			*ft_strunicode(wchar_t *s);
+
+char			*ft_strmove(char *str, char blnk);
+
+int				ft_checkunicode(wchar_t *str);
+
+char			*ft_strjoinfree(char *ret, char *s1, char *s2);
 
 #endif

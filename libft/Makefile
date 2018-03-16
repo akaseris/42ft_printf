@@ -6,7 +6,7 @@
 #    By: akaseris <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:05:02 by akaseris          #+#    #+#              #
-#    Updated: 2017/12/11 16:56:18 by akaseris         ###   ########.fr        #
+#    Updated: 2018/03/04 20:01:38 by akaseris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ FT = ft_putchar ft_putstr ft_strcmp ft_strlen ft_strdup ft_strcpy ft_strcat \
 		ft_strsub ft_strjoin ft_strtrim ft_strsplit ft_putendl ft_putchar_fd \
 		ft_putstr_fd ft_putendl_fd ft_putnbr_fd ft_lstnew ft_lstdelone \
 		ft_lstdel ft_lstadd ft_lstiter  ft_lstmap ft_isprime ft_sqrt \
-		ft_sortwordtab ft_advancedsortwordtab ft_swap ft_printwordstables
+		ft_sortwordtab ft_advancedsortwordtab ft_swap ft_printwordstables \
+		ft_strndup ft_strreplace ft_itoa_base ft_strtolower ft_strtoupper \
+		ft_utoa_base ft_convertunicode ft_strunicode ft_strmove ft_checkunicode \
+		ft_strjoinfree
 
 FLAGS = -Wall -Werror -Wextra
 
