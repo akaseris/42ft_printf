@@ -49,3 +49,19 @@ void	ft_handleoux(t_print *sprint, va_list ap)
 	else
 		ft_uint(sprint, ap);
 }
+
+void	ft_handlef(t_print *sprint, va_list ap)
+{
+	double	nb;
+	char	*str;
+
+	nb = va_arg(ap, double);
+	sprint->prc = (sprint->prc == -1) ? 6 : sprint->prc;
+	sprint->minus = (nb < 0) ? 1 : 0;
+	nb = (nb < 0) ? -nb : nb;
+	str = ft_ftoa(nb, sprint->prc);
+	str = ft_applywidth(sprint, str);
+	str = ft_applyflags(sprint, str);
+	sprint->buf = ft_strjoinfree(sprint->buf, sprint->buf, str);
+	free(str);
+}

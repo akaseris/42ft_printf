@@ -18,6 +18,8 @@ static void	ft_printnumber(t_print *sprint, va_list ap)
 		ft_handledi(sprint, ap);
 	else if (ft_strchr("pouxX", sprint->type))
 		ft_handleoux(sprint, ap);
+	else if (ft_strchr("fF", sprint->type))
+		ft_handlef(sprint, ap);
 }
 
 static void	ft_printalpha(t_print *sprint, va_list ap)
@@ -68,7 +70,7 @@ void		ft_process(t_print *sprint, va_list ap)
 		sprint->size = ft_strjoinfree(sprint->size, sprint->size, "l");
 		sprint->type = sprint->type + 32;
 	}
-	if (ft_strchr("dipouxX", sprint->type) != NULL && sprint->type != '\0')
+	if (ft_strchr("dipouxXfF", sprint->type) != NULL && sprint->type != '\0')
 		ft_printnumber(sprint, ap);
 	else if (sprint->type == 's' || sprint->type == 'c')
 		ft_printalpha(sprint, ap);

@@ -30,7 +30,7 @@ int				ft_printf(const char *str, ...)
 	{
 		*tmp++ = '\0';
 		sprint->buf = ft_strjoinfree(sprint->buf, sprint->buf, dup);
-		if (!(dup = ft_assign(tmp, sprint)))
+		if (!(dup = ft_assign(tmp, sprint, ap)))
 			return (-1);
 		ft_process(sprint, ap);
 		sprint = ft_allocate(sprint);

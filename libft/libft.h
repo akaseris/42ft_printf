@@ -175,4 +175,6 @@ int				ft_checkunicode(wchar_t *str);
 
 char			*ft_strjoinfree(char *ret, char *s1, char *s2);
 
+char			*ft_ftoa(double nb, int prc);
+
 #endif

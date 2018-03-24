@@ -12,13 +12,17 @@
 
 #include "ft_printf.h"
 
-static void	ft_nulchar(t_print *sprint, char c)
+static void	ft_nulchar(t_print *sprint, char c, char *str)
 {
 	char *nul;
 
 	if (!c)
 	{
-		nul = ft_strjoin(ft_itoa(ft_strlen(sprint->buf)), ",\0");
+		if (ft_strchr(sprint->flags, '-') == NULL)
+			nul = ft_strjoin(ft_itoa(ft_strlen(sprint->buf)), ",\0");
+		else
+			nul = ft_strjoin(ft_itoa(ft_strlen(sprint->buf) - ft_strlen(str))
+					, ",\0");
 		sprint->nulls = ft_strjoinfree(sprint->nulls, sprint->nulls, nul);
 		free(nul);
 	}
@@ -78,7 +82,7 @@ void		ft_char(t_print *sprint, va_list ap)
 		str[0] = c;
 	}
 	sprint->buf = ft_strjoinfree(sprint->buf, sprint->buf, str);
-	ft_nulchar(sprint, c);
+	ft_nulchar(sprint, c, str);
 	free(str);
 }
 
@@ -135,6 +139,6 @@ void		ft_wint_t(t_print *sprint, va_list ap)
 				: ft_strjoinfree(str, s, str);
 	}
 	sprint->buf = ft_strjoinfree(sprint->buf, sprint->buf, str);
-	ft_nulchar(sprint, c);
+	ft_nulchar(sprint, c, str);
 	free(str);
 }

@@ -32,12 +32,13 @@ typedef struct	s_print
 }				t_print;
 
 int				ft_printf(const char *str, ...);
-char			*ft_assign(char *str, t_print *sprint);
+char			*ft_assign(char *str, t_print *sprint, va_list ap);
 void			ft_process(t_print *sprint, va_list ap);
 void			ft_string(t_print *sprint, va_list ap);
 void			ft_char(t_print *sprint, va_list ap);
 void			ft_handledi(t_print *sprint, va_list ap);
 void			ft_handleoux(t_print *sprint, va_list ap);
+void			ft_handlef(t_print *sprint, va_list ap);
 void			ft_int(t_print *sprint, va_list ap);
 void			ft_long(t_print *sprint, va_list ap);
 void			ft_longlong(t_print *sprint, va_list ap);

@@ -25,7 +25,7 @@ FT = ft_putchar ft_putstr ft_strcmp ft_strlen ft_strdup ft_strcpy ft_strcat \
 		ft_sortwordtab ft_advancedsortwordtab ft_swap ft_printwordstables \
 		ft_strndup ft_strreplace ft_itoa_base ft_strtolower ft_strtoupper \
 		ft_utoa_base ft_convertunicode ft_strunicode ft_strmove ft_checkunicode \
-		ft_strjoinfree
+		ft_strjoinfree ft_ftoa
 
 FLAGS = -Wall -Werror -Wextra
 
